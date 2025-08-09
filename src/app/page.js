@@ -8,7 +8,7 @@ import SettingsContent from "@/components/SettingsContent";
 import CategoryFilter from "@/components/CategoryFilter";
 
 export default function Home() {
-  const [selected, setSelected] = useState("dashboard");
+  const [selected, setSelected] = useState("products");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const [category, setCategory] = useState("smartphones");
