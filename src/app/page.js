@@ -4,13 +4,11 @@ import Sidebar from "../components/Sidebar";
 import ProductCard from "../components/ProductCard";
 
 export default function Home() {
-  
   const [selected, setSelected] = useState("smartphones");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-
     const fetchProducts = async () => {
       setLoading(true);
       try {
@@ -36,40 +34,45 @@ export default function Home() {
   }, [selected]);
 
   return (
-    <div className="min-h-screen">
-     
+    <div className="min-h-screen bg-gray-50">
+      \
+      {/* HEADER */}
       <header className="bg-gray-200 py-4 shadow fixed top-0 w-full z-10">
-        <div className="max-w-7xl mx-auto px-6 flex items-center gap-6">
+        <div className="flex items-center gap-6 px-6">
+          {/* Logo */}
           <div className="text-2xl font-bold">Logo</div>
-          <div className="flex-1">
-            <input
-              className="w-full rounded-md px-4 py-2 border"
-              placeholder="Search..."
-            />
+
+          {/* Search Bar */}
+          <div className="flex-1 flex justify-center">
+            <div className="w-full lg:ml-64 lg:mr-72 px-6">
+              <input
+                className="w-full rounded-md px-4 py-2 border"
+                placeholder="Search..."
+              />
+            </div>
           </div>
+
+          {/* Avatar */}
           <div className="w-10 h-10 bg-gray-300 rounded-full" />
         </div>
       </header>
 
-     
-     
-      <div className="pt-[76px] max-w-7xl mx-auto px-6 py-8 flex gap-6">
+      {/* LAYOUT */}
+      <div className="pt-16 flex">
+        {/* LEFT SIDEBAR */}
+        <div className="hidden lg:block w-64 fixed left-0 top-16 h-[calc(100vh-4rem)] border-r bg-white">
+          <Sidebar selected={selected} setSelected={setSelected} />
+        </div>
 
-        {/* Left sidebar */}
-        <aside className="w-64">
-          <div className="sticky top-[84px]">
-            <Sidebar selected={selected} setSelected={setSelected} />
-          </div>
-        </aside>
-
-        {/* Main */}
-        <main className="flex-1 ">
-          <div className="mb-5 mt-2 ">
+        {/* MAIN CONTENT */}
+        <main className="flex-1 lg:ml-64 lg:mr-72 p-6">
+          <div className="mb-5">
             <input
               className="w-full rounded-md px-4 py-3 border shadow-sm"
               placeholder="Filter"
             />
           </div>
+
           {loading ? (
             <div className="text-center py-20">Loading...</div>
           ) : (
@@ -81,12 +84,10 @@ export default function Home() {
           )}
         </main>
 
-        {/* Right sidebar */}
-        <aside className="w-72 hidden lg:block">
-          <div className="sticky top-[84px]">
-            <div className="p-6 bg-white rounded shadow h-52">Right panel</div>
-          </div>
-        </aside>
+        {/* RIGHT SIDEBAR */}
+        <div className="hidden lg:block w-72 fixed right-0 top-16 h-[calc(100vh-4rem)] border-l bg-white p-6 overflow-y-auto">
+          Right panel
+        </div>
       </div>
     </div>
   );
