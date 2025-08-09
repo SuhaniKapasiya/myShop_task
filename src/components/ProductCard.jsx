@@ -1,4 +1,3 @@
-
 export default function ProductCard({ product }) {
   return (
     <div className="bg-white rounded-lg shadow p-4 flex flex-col">
@@ -6,7 +5,7 @@ export default function ProductCard({ product }) {
         <img
           src={product.thumbnail}
           alt={product.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain"
         />
       </div>
       <h3 className="mt-3 font-semibold text-lg">{product.title}</h3>

@@ -35,16 +35,15 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      \
       {/* HEADER */}
       <header className="bg-gray-200 py-4 shadow fixed top-0 w-full z-10">
-        <div className="flex items-center gap-6 px-6">
+        <div className="flex items-center w-full">
           {/* Logo */}
-          <div className="text-2xl font-bold">Logo</div>
+          <div className="text-2xl font-bold ml-28">Logo</div>
 
           {/* Search Bar */}
-          <div className="flex-1 flex justify-center">
-            <div className="w-full lg:ml-64 lg:mr-72 px-6">
+          <div className="flex-1 flex justify-center w-full">
+            <div className="w-full mx-48 pr-12">
               <input
                 className="w-full rounded-md px-4 py-2 border"
                 placeholder="Search..."
@@ -53,7 +52,7 @@ export default function Home() {
           </div>
 
           {/* Avatar */}
-          <div className="w-10 h-10 bg-gray-300 rounded-full" />
+          <div className="w-10 h-10 bg-gray-300 rounded-full mr-28" />
         </div>
       </header>
 
