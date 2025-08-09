@@ -1,9 +1,9 @@
+
 const items = [
-    
-  { id: "laptops", label: "laptops" },
-  { id: "fragrances", label: "fragrances" },
-  { id: "smartphones", label: "smartphones" },
-  { id: "groceries", label: "groceries" },
+  { id: "dashboard", label: "Dashboard" },
+  { id: "products", label: "Products" },
+  { id: "orders", label: "Orders" },
+  { id: "settings", label: "Settings" },
 ];
 
 export default function Sidebar({ selected, setSelected }) {
