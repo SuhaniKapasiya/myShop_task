@@ -8,6 +8,7 @@ import SettingsContent from "@/components/SettingsContent";
 import CategoryFilter from "@/components/CategoryFilter";
 
 export default function Home() {
+
   const [selected, setSelected] = useState("products");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -47,11 +48,19 @@ export default function Home() {
         return loading ? (
           <div className="text-center py-20">Loading...</div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {products.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
+          <>
+            <div className="mb-5">
+              <input
+                className="w-full rounded-md px-4 py-3 border shadow-sm"
+                placeholder="Filter"
+              />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {products.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </div>
+          </>
         );
       case "orders":
         return <OrdersContent />;
@@ -95,12 +104,7 @@ export default function Home() {
         {/* MAIN CONTENT */}
       
         <main className="flex-1 lg:ml-64 lg:mr-72 p-6">
-          <div className="mb-5">
-            <input
-              className="w-full rounded-md px-4 py-3 border shadow-sm"
-              placeholder="Filter"
-            />
-          </div>
+         
           {renderContent()}
         </main>
 

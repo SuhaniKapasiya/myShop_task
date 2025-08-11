@@ -19,7 +19,7 @@ export default function Sidebar({ selected, setSelected }) {
               className={`flex w-full p-2 text-left rounded-lg transition ${
                 selected === item.id
                   ? "bg-gray-200 font-semibold"
-                  : "hover:bg-gray-100"
+                  : "hover:bg-gray-100 cursor-pointer"
               }`}
             >
               {item.label}
